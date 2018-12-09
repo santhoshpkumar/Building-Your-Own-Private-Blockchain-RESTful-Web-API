@@ -2,7 +2,7 @@
   "name": "building-your-own-private-blockchain-restful-web-api",
   "version": "1.0.0",
   "description": "RESTful Web API with Node.js Framework",
-  "main": "simpleChain.js",
+  "main": "api.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon api.js"
