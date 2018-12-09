@@ -1,0 +1,23 @@
+{
+  "name": "building-your-own-private-blockchain-restful-web-api",
+  "version": "1.0.0",
+  "description": "RESTful Web API with Node.js Framework",
+  "main": "simpleChain.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/santhoshpkumar/Building-Your-Own-Private-Blockchain-RESTful-Web-API.git"
+  },
+  "author": "Santhosh Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/santhoshpkumar/Building-Your-Own-Private-Blockchain-RESTful-Web-API/issues"
+  },
+  "homepage": "https://github.com/santhoshpkumar/Building-Your-Own-Private-Blockchain-RESTful-Web-API#readme",
+  "dependencies": {
+    "crypto-js": "^3.1.9-1",
+    "level": "^4.0.0"
+  }
+}
