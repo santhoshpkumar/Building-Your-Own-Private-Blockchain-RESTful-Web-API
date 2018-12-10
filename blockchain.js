@@ -27,17 +27,21 @@ class Blockchain{
       // Block hash with SHA256 using newBlock and converting to a string
       newBlock.hash = SHA256(JSON.stringify(newBlock)).toString();
       // Adding block object to chain
-      await level.addBlockToDB(newBlock.height, JSON.stringify(newBlock));
+      return await level.addBlockToDB(newBlock.height, JSON.stringify(newBlock));
     }
   
     // Get block height
     async getBlockHeight(){
-      return await level.getBlockHeightFromDB().catch(e=>console.log("error",e))
+      return await level.getBlockHeightFromDB().catch(e=>{
+        console.log("error",e)
+        return -1;
+      });
     }
   
     // get block
     async getBlock(blockHeight){
       // return object as a single string
+      console.log("getBlock called");
       return await level.getBlockFromDB(blockHeight);
     }
   

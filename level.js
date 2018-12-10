@@ -21,14 +21,18 @@ function addBlockToDB(key,value){
 // Get block from levelDB with key
 function getBlockFromDB(key){
     return new Promise((resolve, reject) => {
-        db.get(key,(error, value) => {
-        if (error){
-            reject(error)
-        }
-        console.log(`getBlockFromDB: Block requested ${value}`)
-        resolve(value)
-        });
-    })
+        db.get(key, (error, value) => {
+          if (value === undefined) {
+            return reject('Not found')
+          } else if (error) {
+            return reject(error)
+          }
+  
+          console.log(`getBlockFromDB: Block data -> ${value}`)
+          //value = JSON.parse(value)
+          return resolve(value)
+        })
+      })
 }
 
 // Get block height
