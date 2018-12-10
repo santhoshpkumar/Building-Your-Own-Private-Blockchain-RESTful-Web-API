@@ -10,10 +10,10 @@ const db = level(chainDB);
 function addBlockToDB(key,value){
     return new Promise((resolve, reject) => {
         db.put(key, value, (error) =>  {
-        if (error){
-            reject(error) }
-        console.log(`addBlockToDB: Block added ${key}`)
-        resolve(`Block added ${key}`)
+            if (error){
+                reject(error) 
+            }
+            resolve(getBlockFromDB(key));
         });
     })
 }
