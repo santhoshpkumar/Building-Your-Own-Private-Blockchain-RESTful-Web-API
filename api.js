@@ -15,7 +15,8 @@ app.use(bodyParser.json({type: '*/*'}));
 app.get('/block/:block', (req, res, next) => {
     let block = Blockchain.getBlock(req.params.block)
     block.then(function(result) {
-      res.send(JSON.parse(result));
+      res.statusCode = 200;
+      res.json(JSON.parse(result));
     })
     .catch (error => {
       res.status(404).json({
