@@ -27,7 +27,7 @@ app.get('/block/:block', (req, res, next) => {
 
 app.post('/block', (req, res) => {
 
-  if (req.body.body === '' || req.body.body === undefined) {
+  if (req.body === undefined || req.body.body === '' || req.body.body === undefined) {
     res.status(400).json({
       "status": 400,
       message: "Fill the body parameter"
